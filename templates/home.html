@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="text-gray-400 bg-gray-900 body-font">
+    
+        <div class="container px-5 py-24 mx-auto">
+           
+          <div class="flex flex-wrap -m-4">
+            {% for blog in  bloglar %}
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a href="#" class="block relative h-48 rounded overflow-hidden">
+                <img alt="..." class="object-cover object-center w-full h-full block" src="{{blog.image1.url}}">
+              
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{blog.category}}</h3>
+                <h2 class="text-white title-font text-lg font-medium">{{blog.title}}</h2>
+                <p class="mt-1">{{blog.text}}</p>
+              </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+          
+        </div>
+    
+      </section>
+    
+    <h1></h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
